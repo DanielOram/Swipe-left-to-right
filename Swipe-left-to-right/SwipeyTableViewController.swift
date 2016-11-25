@@ -10,7 +10,7 @@ import UIKit
 
 class SwipeyTableViewController: UITableViewController {
     
-    let model: [Int] = [1,2,3,4,5,6,7,8,9,10]
+    let model: [String] = [1,2,3,4,5,6,7,8,9,10].map { String($0) }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,15 +39,16 @@ class SwipeyTableViewController: UITableViewController {
         return model.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SwipeyCell", for: indexPath)
 
         // Configure the cell...
+        cell.textLabel?.text = model[indexPath.row]
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
